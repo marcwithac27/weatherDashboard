@@ -79,3 +79,8 @@
     text-shadow: 0px 4px rgba(0, 0, 0, 0.4);
   }
   
+  .hide {
+      display: none;
+  }
+  
+  
