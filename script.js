@@ -28,6 +28,13 @@ $.ajax({
           }).then(function(response){
             $('#uvIndex').append('UV Index ', response.value)
           })
+          var queryURLForecast = "https://api.openweathermap.org/data/2.5/forecast?q=" + search + "&appid=" + wApi;
+          $.ajax({
+              url: queryURLForecast,
+              method: "GET"
+          }).then(function(response){
+              console.log(response)
+          })
       })
 
 
