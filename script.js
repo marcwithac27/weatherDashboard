@@ -37,6 +37,8 @@ var queryURLCity = "https://api.openweathermap.org/data/2.5/weather?q="+ search 
 $('.city').empty()
 $('.temp').empty()
 $('#humidity').empty()
+$('#windSpeed').empty()
+$('#uvIndex').empty()
 localStorage.setItem('savedCity', search)
 $.ajax({
     url: queryURLCity,
@@ -47,11 +49,19 @@ $.ajax({
     var temp = response.main.temp
     var humidity = response.main.humidity
     var windSpeed = response.wind.speed
+    var lat = response.coord.lat
+    var lon = response.coord.lon
         $('.city').append(city)
         $('.temp').append('Temperture: ', temp, ' °F')
         $('#humidity').append('Humidity: ', humidity)
         $('#windSpeed').append('Wind Speed ', windSpeed)
-        
+        var queryURLUvIndex = "https://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon=" + lon + "&appid=" + wApi;
+         $.ajax({
+            url: queryURLUvIndex,
+            method: "GET"
+          }).then(function(response){
+            $('#uvIndex').append('UV Index ', response.value)
+          })
       })
       
     })
