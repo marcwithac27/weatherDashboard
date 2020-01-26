@@ -8,22 +8,39 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="app-wrap">
-    <header>
-      <input type="text" autocomplete="off" class="search-box" placeholder="Search for a city..." />
-    </header>
-    <main>
-      <section class="location">
-        <div class="city">Northampton, GB</div>
-        <div class="date">Thursday 10 January 2020</div>
-      </section>
-      <div class="current">
-        <div class="temp">15<span>°c</span></div>
-        <div class="weather">Sunny</div>
-        <div class="hi-low">13°c / 16°c</div>
-      </div>
-    </main>
+        <header class="card-header card text-white bg-dark mb-3 text-center">
+                Weather Dashboard
+              </header>
+  <div class="app-wrap container-fluid">
+        <div class="container-fluid">
+                <div class="row">
+                  <div class="col-4"><div class="input-group mb-3">
+                        <input id="search" type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <div class="input-group-append">
+                       <button type="button" class="btn btn-primary"><i class="fab fa-searchengin"></i></button>
+                        </div>
+                      </div></div>
+                  <div class="col-6 container-fluid"><div class="row"> <section class="location">
+                        <div class="city"></div>
+                        <div class="date"><span id="time"></span></div>
+                      </section>
+                      <div class="current">
+                        <div class="temp"></div>
+                        <div class="forecast"></div>
+                        <div id="humidity" class="hi-low"></div>
+                    </div>
+                     
+                  
+                        
+                      </div></div>
+                </div>
+              </div>
+   
   </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="https://kit.fontawesome.com/34230be8c5.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
