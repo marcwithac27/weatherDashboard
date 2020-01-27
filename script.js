@@ -66,9 +66,11 @@ $.ajax({
                 var fDate = moment().add(1, 'days').calendar()
                 var fTemp = result.main.temp
                 var fHumidity = result.main.humidity
-                var weather = forCasts.slice()
-    weather.forEach(function(forCast){
-        var mainForecast = forCast.main
+                var fForecasts = result.weather
+                var weather = fForecasts.slice()
+    weather.forEach(function(fForecast){
+        var mainForecast = fForecast.main
+
         //var desForecast = forCast.description
         if (mainForecast === "Clear"){
           $('#fForecast').append('<img id="clear" src="https://cdn2.iconfinder.com/data/icons/weather-and-forecast-free/32/Weather_Weather_Forecast_Moon_Night_Sky-64.png">')  
