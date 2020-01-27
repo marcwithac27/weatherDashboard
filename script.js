@@ -20,6 +20,7 @@ $.ajax({
     var weather = forCasts.slice()
     weather.forEach(function(forCast){
         var mainForecast = forCast.main
+        
         //var desForecast = forCast.description
         if (mainForecast === "Clear"){
           $('#forecast').append('<img id="clear" src="https://cdn2.iconfinder.com/data/icons/weather-and-forecast-free/32/Weather_Weather_Forecast_Moon_Night_Sky-64.png">')  
@@ -70,7 +71,7 @@ $.ajax({
                 var weather = fForecasts.slice()
     weather.forEach(function(fForecast){
         var mainForecast = fForecast.main
-
+        //console.log(weather)
         //var desForecast = forCast.description
         if (mainForecast === "Clear"){
           $('#fForecast').append('<img id="clear" src="https://cdn2.iconfinder.com/data/icons/weather-and-forecast-free/32/Weather_Weather_Forecast_Moon_Night_Sky-64.png">')  
@@ -98,9 +99,10 @@ $.ajax({
                 var sDate = moment().add(2, 'days').calendar()
                 var sTemp = result.main.temp
                 var sHumidity = result.main.humidity
-                var weather = forCasts.slice()
-    weather.forEach(function(forCast){
-        var mainForecast = forCast.main
+                var sForecasts = result.weather
+                var weather = sForecasts.slice()
+    weather.forEach(function(sForecast){
+        var mainForecast = sForecast.main
         //var desForecast = forCast.description
         if (mainForecast === "Clear"){
           $('#sForecast').append('<img id="clear" src="https://cdn2.iconfinder.com/data/icons/weather-and-forecast-free/32/Weather_Weather_Forecast_Moon_Night_Sky-64.png">')  
@@ -127,9 +129,10 @@ $.ajax({
                 var tDate = moment().add(3, 'days').calendar()
                 var tTemp = result.main.temp
                 var tHumidity = result.main.humidity
-                var weather = forCasts.slice()
-    weather.forEach(function(forCast){
-        var mainForecast = forCast.main
+                var tForecasts = result.weather
+                var weather = tForecasts.slice()
+    weather.forEach(function(tForecast){
+        var mainForecast = tForecast.main
         //var desForecast = forCast.description
         if (mainForecast === "Clear"){
           $('#tForeCast').append('<img id="clear" src="https://cdn2.iconfinder.com/data/icons/weather-and-forecast-free/32/Weather_Weather_Forecast_Moon_Night_Sky-64.png">')  
@@ -157,9 +160,10 @@ $.ajax({
                 var dateF = moment().add(4, 'days').calendar()
                 var tempF = result.main.temp
                 var humidityF = result.main.humidity
-                var weather = forCasts.slice()
-                weather.forEach(function(forCast){
-                    var mainForecast = forCast.main
+                var forecastTs = result.weather
+                var weather = forecastTs.slice()
+    weather.forEach(function(forecastT){
+        var mainForecast = forecastT.main
                     //var desForecast = forCast.description
                     if (mainForecast === "Clear"){
                       $('#foreCastF').append('<img id="clear" src="https://cdn2.iconfinder.com/data/icons/weather-and-forecast-free/32/Weather_Weather_Forecast_Moon_Night_Sky-64.png">')  
@@ -187,9 +191,10 @@ $.ajax({
                 var dateFi = moment().add(5, 'days').calendar()
                 var tempFi = result.main.temp
                 var humidityFi = result.main.humidity
-                var weather = forCasts.slice()
-                weather.forEach(function(forCast){
-                    var mainForecast = forCast.main
+                var forecastFis = result.weather
+                var weather = forecastFis.slice()
+    weather.forEach(function(forecastFi){
+        var mainForecast = forecastFi.main
                     //var desForecast = forCast.description
                     if (mainForecast === "Clear"){
                       $('#foreCastFi').append('<img id="clear" src="https://cdn2.iconfinder.com/data/icons/weather-and-forecast-free/32/Weather_Weather_Forecast_Moon_Night_Sky-64.png">')  
@@ -288,9 +293,10 @@ $.ajax({
                 var fDate = moment().add(1, 'days').calendar()
                 var fTemp = result.main.temp
                 var fHumidity = result.main.humidity
-                var weather = forCasts.slice()
-                weather.forEach(function(forCast){
-                    var mainForecast = forCast.main
+                var fForecasts = result.weather
+                var weather = fForecasts.slice()
+    weather.forEach(function(fForecast){
+                    var mainForecast = fForecast.main
                     //var desForecast = forCast.description
                     if (mainForecast === "Clear"){
                       $('#fForecast').append('<img id="clear" src="https://cdn2.iconfinder.com/data/icons/weather-and-forecast-free/32/Weather_Weather_Forecast_Moon_Night_Sky-64.png">')  
@@ -300,7 +306,7 @@ $.ajax({
                     }
                     if (mainForecast === "Rain")
                     $('#fForecast').append('<img id="rain" src="https://cdn2.iconfinder.com/data/icons/weather-and-forecast-free/32/Weather_Weather_Forecast_Rain_Cloud_Climate-64.png">')
-                    console.log(mainForecast)
+                    //console.log(mainForecast)
                     if (mainForecast === "Snow"){
                         $('#fForecast').append('<img id="snow" src="https://cdn2.iconfinder.com/data/icons/weather-and-forecast-free/32/Weather_Weather_Forecast_Flake_Flakes_Snowflake-64.png">')
                     }
@@ -318,9 +324,10 @@ $.ajax({
                 var sDate = moment().add(2, 'days').calendar()
                 var sTemp = result.main.temp
                 var sHumidity = result.main.humidity
-                var weather = forCasts.slice()
-    weather.forEach(function(forCast){
-        var mainForecast = forCast.main
+                var sForecasts = result.weather
+                var weather = sForecasts.slice()
+    weather.forEach(function(sForecast){
+        var mainForecast = sForecast.main
         //var desForecast = forCast.description
         if (mainForecast === "Clear"){
           $('#sForecast').append('<img id="clear" src="https://cdn2.iconfinder.com/data/icons/weather-and-forecast-free/32/Weather_Weather_Forecast_Moon_Night_Sky-64.png">')  
@@ -347,9 +354,10 @@ $.ajax({
                 var tDate = moment().add(3, 'days').calendar()
                 var tTemp = result.main.temp
                 var tHumidity = result.main.humidity
-                var weather = forCasts.slice()
-                weather.forEach(function(forCast){
-                    var mainForecast = forCast.main
+                var tForecasts = result.weather
+                var weather = tForecasts.slice()
+    weather.forEach(function(tForecast){
+        var mainForecast = tForecast.main
                     //var desForecast = forCast.description
                     if (mainForecast === "Clear"){
                       $('#tForeCast').append('<img id="clear" src="https://cdn2.iconfinder.com/data/icons/weather-and-forecast-free/32/Weather_Weather_Forecast_Moon_Night_Sky-64.png">')  
@@ -377,9 +385,10 @@ $.ajax({
                 var dateF = moment().add(4, 'days').calendar()
                 var tempF = result.main.temp
                 var humidityF = result.main.humidity
-                var weather = forCasts.slice()
-                weather.forEach(function(forCast){
-                    var mainForecast = forCast.main
+                var forecastTs = result.weather
+                var weather = forecastTs.slice()
+    weather.forEach(function(forecastT){
+        var mainForecast = forecastT.main
                     //var desForecast = forCast.description
                     if (mainForecast === "Clear"){
                       $('#foreCastF').append('<img id="clear" src="https://cdn2.iconfinder.com/data/icons/weather-and-forecast-free/32/Weather_Weather_Forecast_Moon_Night_Sky-64.png">')  
@@ -407,9 +416,10 @@ $.ajax({
                 var dateFi = moment().add(5, 'days').calendar()
                 var tempFi = result.main.temp
                 var humidityFi = result.main.humidity
-                var weather = forCasts.slice()
-                weather.forEach(function(forCast){
-                    var mainForecast = forCast.main
+                var forecastFis = result.weather
+                var weather = forecastFis.slice()
+    weather.forEach(function(forecastFi){
+        var mainForecast = forecastFi.main
                     //var desForecast = forCast.description
                     if (mainForecast === "Clear"){
                       $('#foreCastFi').append('<img id="clear" src="https://cdn2.iconfinder.com/data/icons/weather-and-forecast-free/32/Weather_Weather_Forecast_Moon_Night_Sky-64.png">')  
