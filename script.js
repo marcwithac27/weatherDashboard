@@ -14,13 +14,35 @@ $.ajax({
     var temp = response.main.temp
     var humidity = response.main.humidity
     var windSpeed = response.wind.speed
+    var forCasts = response.weather
     var lat = response.coord.lat
     var lon = response.coord.lon
+    var weather = forCasts.slice()
+    weather.forEach(function(forCast){
+        var mainForecast = forCast.main
+        //var desForecast = forCast.description
+        if (mainForecast === "Clear"){
+          $('#forecast').append('<img id="clear" src="https://cdn2.iconfinder.com/data/icons/weather-and-forecast-free/32/Weather_Weather_Forecast_Moon_Night_Sky-64.png">')  
+        }
+        if (mainForecast === "Clouds"){
+            $('#forecast').append('<img id="clouds" src="https://cdn2.iconfinder.com/data/icons/weather-and-forecast-free/32/Weather_Weather_Forecast_Cloudy_Season_Cloud-64.png">')
+        }
+        if (mainForecast === "Rain")
+        $('#forecast').append('<img id="rain" src="https://cdn2.iconfinder.com/data/icons/weather-and-forecast-free/32/Weather_Weather_Forecast_Rain_Cloud_Climate-64.png">')
+        console.log(mainForecast)
+        if (mainForecast === "Snow"){
+            $('#forecast').append('<img id="snow" src="https://cdn2.iconfinder.com/data/icons/weather-and-forecast-free/32/Weather_Weather_Forecast_Flake_Flakes_Snowflake-64.png">')
+        }
+        if (mainForecast === "Mist"){
+            $('#forecast').append('<img id="mist" src="https://cdn2.iconfinder.com/data/icons/weather-and-forecast-free/32/Weather_Weather_Forecast_Sunny_Flake_Cloud-64.png">')
+        }
+    })
+        
         $('.city').append(city)
         $('.temp').append('Temperture: ', temp, '°F')
-        $('#humidity').append('Humidity: ', humidity)
+        $('#humidity').append('Humidity: ', humidity,'%')
         $('#windSpeed').append('Wind Speed ', windSpeed)
-         //console.log(lat, lon) 
+          
          var queryURLUvIndex = "https://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon=" + lon + "&appid=" + wApi;
          $.ajax({
             url: queryURLUvIndex,
@@ -44,7 +66,7 @@ $.ajax({
                 //console.log(result) 
                 $('#fDate').append(fDate)
                 $('#fTemp').append('Temp: ', fTemp, '°F')
-                $('#fHumidity').append('Humidity: ', fHumidity)
+                $('#fHumidity').append('Humidity: ', fHumidity,'%')
             })
             var dayTwo = results.slice(13,14)
             dayTwo.forEach(function(result) {
@@ -53,7 +75,7 @@ $.ajax({
                 var sHumidity = result.main.humidity
                 $('#sDate').append(sDate);
                 $('#sTemp').append('Temp: ',sTemp, '°F');
-                $('#sHumidity').append('Humidity: ',sHumidity)
+                $('#sHumidity').append('Humidity: ',sHumidity,'%')
             })
             var dayThree = results.slice(20,21)
             dayThree.forEach(function(result) {
@@ -62,7 +84,7 @@ $.ajax({
                 var tHumidity = result.main.humidity
                 $('#tDate').append(tDate);
                 $('#tTemp').append('Temp: ',tTemp, '°F');
-                $('#tHumidity').append('Humidity: ',tHumidity); 
+                $('#tHumidity').append('Humidity: ',tHumidity,'%'); 
                 
             })
             var dayFour = results.slice(27,28)
@@ -72,7 +94,7 @@ $.ajax({
                 var humidityF = result.main.humidity
                 $('#dateF').append(dateF);
                 $('#tempF').append('Temp: ',tempF, '°F');
-                $('#humidityF').append('Humidity: ',humidityF); 
+                $('#humidityF').append('Humidity: ',humidityF,'%'); 
                 //console.log(result)
             })
             var dayFive = results.slice(34,35)
@@ -82,8 +104,8 @@ $.ajax({
                 var humidityFi = result.main.humidity
                 $('#dateFi').append(dateFi);
                 $('#tempFi').append('Temp: ',tempFi, '°F');
-                $('#humidityFi').append('Humidity: ',humidityFi); 
-                console.log(result)
+                $('#humidityFi').append('Humidity: ',humidityFi,'%'); 
+               // console.log(result)
             })
           })
       })
@@ -105,7 +127,7 @@ $.ajax({
     url: queryURLCity,
     method: "GET"
   }).then(function(response) {
-      console.log(response)
+      //console.log(response)
     var city = response.name
     var temp = response.main.temp
     var humidity = response.main.humidity
@@ -178,7 +200,7 @@ $.ajax({
                 $('#dateFi').append(dateFi);
                 $('#tempFi').append('Temp: ',tempFi, '°F');
                 $('#humidityFi').append('Humidity: ',humidityFi); 
-                console.log(result)
+                //console.log(result)
             })
           })
       })
