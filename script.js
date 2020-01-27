@@ -55,7 +55,7 @@ $.ajax({
                 $('#sTemp').append('Temp: ',sTemp, '°F');
                 $('#sHumidity').append('Humidity: ',sHumidity)
             })
-            var dayThree = results.slice(21,22)
+            var dayThree = results.slice(20,21)
             dayThree.forEach(function(result) {
                 var tDate = moment().add(3, 'days').calendar()
                 var tTemp = result.main.temp
@@ -65,7 +65,7 @@ $.ajax({
                 $('#tHumidity').append('Humidity: ',tHumidity); 
                 
             })
-            var dayFour = results.slice(29,30)
+            var dayFour = results.slice(27,28)
             dayFour.forEach(function(result) {
                 var dateF = moment().add(4, 'days').calendar()
                 var tempF = result.main.temp
@@ -75,7 +75,7 @@ $.ajax({
                 $('#humidityF').append('Humidity: ',humidityF); 
                 //console.log(result)
             })
-            var dayFive = results.slice(38,39)
+            var dayFive = results.slice(34,35)
             dayFive.forEach(function(result) {
                 var dateFi = moment().add(5, 'days').calendar()
                 var tempFi = result.main.temp
@@ -150,7 +150,7 @@ $.ajax({
                 $('#sTemp').append('Temp: ',sTemp, '°F');
                 $('#sHumidity').append('Humidity: ',sHumidity)
             })
-            var dayThree = results.slice(21,22)
+            var dayThree = results.slice(20,21)
             dayThree.forEach(function(result) {
                 var tDate = moment().add(3, 'days').calendar()
                 var tTemp = result.main.temp
@@ -160,7 +160,7 @@ $.ajax({
                 $('#tHumidity').append('Humidity: ',tHumidity); 
                 
             })
-            var dayFour = results.slice(29,30)
+            var dayFour = results.slice(27,28)
             dayFour.forEach(function(result) {
                 var dateF = moment().add(4, 'days').calendar()
                 var tempF = result.main.temp
@@ -170,7 +170,7 @@ $.ajax({
                 $('#humidityF').append('Humidity: ',humidityF); 
                 //console.log(result)
             })
-            var dayFive = results.slice(38,39)
+            var dayFive = results.slice(34,35)
             dayFive.forEach(function(result) {
                 var dateFi = moment().add(5, 'days').calendar()
                 var tempFi = result.main.temp
