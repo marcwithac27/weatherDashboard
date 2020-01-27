@@ -8,35 +8,79 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-        <header class="card-header card text-white bg-dark mb-3 text-center">
+        <header class="header card text-white bg-dark mb-3 text-center">
                 Weather Dashboard
               </header>
   <div class="app-wrap container-fluid">
         <div class="container-fluid">
                 <div class="row">
                   <div class="col-4"><div class="input-group mb-3">
-                        <input id="search" type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <input id="search" type="text" class="form-control" placeholder="Type City Here" aria-label="Recipient's username" aria-describedby="button-addon2">
                         <div class="input-group-append">
                        <button type="button" class="btn btn-primary"><i class="fab fa-searchengin"></i></button>
                         </div>
                       </div></div>
                   <div class="col-6 container-fluid"><div class="row"> <section class="location">
-                        <div class="city"></div><img class="hide" src="https://cdn2.iconfinder.com/data/icons/weather-and-forecast-free/32/Weather_Weather_Forecast_Hot_Sun_Day-64.png" alt="" srcset="">
-                        <div class="date"><span id="time"></span></div>
+                        <div class="city container-fluid"></div><img class="hide" src="https://cdn2.iconfinder.com/data/icons/weather-and-forecast-free/32/Weather_Weather_Forecast_Hot_Sun_Day-64.png" alt="" srcset="">
+                        <div class="date container-fluid"><span id="time"></span></div>
                       </section>
-                      <div class="current">
-                        <div class="temp"></div>
-                        <div class="forecast"></div>
-                        <div id="humidity" class="hi-low"></div>
-                        <div id="windSpeed" class="hi-low"></div>
-                        <div id="uvIndex" class="hi-low"></div>
+                      <div class="current card-body">
+                        <div class="temp container-fluid"></div>
+                        <div class="forecast container-fluid"></div>
+                        <div id="humidity" class="hi-low container-fluid"></div>
+                        <div id="windSpeed" class="hi-low container-fluid"></div>
+                        <div id="uvIndex" class="hi-low container-fluid"></div>
                     </div>
+                    
                      
                   
                         
                       </div></div>
                 </div>
+                
               </div>
+             <div class="container-fluid">
+                   
+                <table class="table">
+                        <tr>
+                                <th scope="row"><div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                                        <div id="fDate" class="card-header"></div>
+                                        <div class="card-body">
+                                          <h5 id="fTemp"class="card-title"></h5>
+                                          <p id="fHumidity" class="card-text"></p>
+                                        </div>
+                                      </div></th>
+                                <td><div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                                        <div id="sDate" class="card-header"></div>
+                                        <div class="card-body">
+                                          <h5 id="sTemp" class="card-title"></h5>
+                                          <p id="sHumidity" class="card-text"></p>
+                                        </div>
+                                      </div></td>
+                                <td><div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                                        <div id="tDate" class="card-header"></div>
+                                        <div class="card-body">
+                                          <h5 id="tTemp" class="card-title"></h5>
+                                          <p id="tHumidity" class="card-text"></p>
+                                        </div>
+                                      </div></td>
+                                <td><div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                                        <div id="dateF" class="card-header"></div>
+                                        <div class="card-body">
+                                          <h5 id="tempF" class="card-title"></h5>
+                                          <p id="humidityF" class="card-text"></p>
+                                        </div>
+                                      </div></td>
+                                <td><div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                                        <div id="dateFi" class="card-header"></div>
+                                        <div class="card-body">
+                                          <h5 id="tempFi" class="card-title"></h5>
+                                          <p id="humidityFi" class="card-text"></p>
+                                        </div>
+                                      </div></td>
+                              </tr>
+                </table>
+             </div>
    
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>

@@ -20,7 +20,7 @@
 
   .card-header {
     background-color: black;
-    font-size: 3rem;
+    font-size: 1rem;
   
 }
   
@@ -53,7 +53,7 @@
   
   .current .temp {
     color: #FFF;
-    font-size: 40px;
+    font-size: 35px;
     font-weight: 900;
     margin: 30px 0px;
     text-shadow: 2px 10px rgba(0, 0, 0, 0.6);
@@ -61,6 +61,9 @@
   
   .current .temp span {
     font-weight: 500;
+  }
+  header {
+      font-size: 3rem;
   }
   
   .current .weather {
