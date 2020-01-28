@@ -1,4 +1,5 @@
 var search = localStorage.getItem('savedCity')
+
 var wApi = "421493e1a9d6d7ce1b656ee17274f671"
 var queryURLCity = "https://api.openweathermap.org/data/2.5/weather?q="+ search +"&units=imperial&appid=" + wApi;
 
@@ -223,6 +224,11 @@ $.ajax({
 
 $('button').click(function(){
 var search = $('#search').val()
+
+var search1 = localStorage.getItem('savedCity')
+var search2 = localStorage.getItem('search2')
+var search3 = localStorage.getItem('search3')
+var search4 = $('#search4').val()
 var queryURLCity = "https://api.openweathermap.org/data/2.5/weather?q="+ search +"&units=imperial&appid=421493e1a9d6d7ce1b656ee17274f671";
 $('.city').empty()
 $('.temp').empty()
@@ -233,7 +239,21 @@ $('.card-title').empty()
 $('.card-text').empty()
 $('.card-header').empty()
 $('.forecast').empty()
-localStorage.setItem('savedCity', search)
+if (search !== search1 || search2 || search3 || search4){
+    $('#search1').append(search).addClass('show')
+    $('#search2').append(search1).addClass('show')
+    $('#search3').append(search2).addClass('show')
+    $('#search4').append(search3).addClass('show')
+    localStorage.setItem('search2', search1)
+    localStorage.setItem('savedCity', search)
+    localStorage.setItem('search3', search2)
+    
+} 
+
+
+    
+
+
 $.ajax({
     url: queryURLCity,
     method: "GET"
